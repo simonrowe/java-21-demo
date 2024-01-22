@@ -19,13 +19,16 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-graphql'
+    implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:15.0.0'
     runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
     implementation('com.github.javafaker:javafaker:1.0.2') {
         exclude group: 'org.yaml'
     }
-    implementation 'org.yaml:snakeyaml:1.29'
+    implementation 'org.yaml:snakeyaml:2.2'
 
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
 
     compileOnly 'org.projectlombok:lombok'
     testCompileOnly 'org.projectlombok:lombok'

@@ -1,20 +1,18 @@
 package dev.simonrowe.java21demo;
 
 
-import com.github.javafaker.Faker;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequiredArgsConstructor
 public class CatFactController {
 
     private final CatFactClient catFactClient;
-    private final Faker faker = new Faker();
+    private final CatFactService catFactService;
 
-    public CatFactController(CatFactClient catFactClient) {
-        this.catFactClient = catFactClient;
-    }
 
     @GetMapping("/catfact/proxy")
     CatFact catFactProxy() {
@@ -24,9 +22,7 @@ public class CatFactController {
     @GetMapping("/catfact/faker")
     @SneakyThrows
     CatFact catFactFaker() {
-        Thread.sleep(300);
-        var catfact = faker.cat().name();
-        return new CatFact(catfact, catfact.length());
+        return catFactService.getCatFact();
     }
 
 

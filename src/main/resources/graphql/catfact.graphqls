@@ -1,0 +1,8 @@
+type CatFact {
+    fact: String!
+    length: Int!
+}
+
+type Query {
+    catFact : CatFact!
+}
