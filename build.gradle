@@ -20,6 +20,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-graphql'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
     implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:15.0.0'
 
     implementation 'io.micrometer:micrometer-tracing-bridge-otel'

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CatFactController {
 
     private final CatFactClient catFactClient;
-    private final CatFactService catFactService;
+    private final CatFactServiceImpl catFactService;
 
     @GetMapping("/catfact/proxy")
     CatFact catFactProxy() {
