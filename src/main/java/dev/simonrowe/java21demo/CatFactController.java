@@ -13,7 +13,6 @@ public class CatFactController {
     private final CatFactClient catFactClient;
     private final CatFactService catFactService;
 
-
     @GetMapping("/catfact/proxy")
     CatFact catFactProxy() {
         return catFactClient.randomFact();

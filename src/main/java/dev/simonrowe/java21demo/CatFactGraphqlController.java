@@ -19,5 +19,9 @@ public class CatFactGraphqlController {
         return catFactService.getCatFact();
     }
 
-
+    @QueryMapping
+    @SneakyThrows
+    CatFact catFactAsync() {
+        return catFactService.getCatFact();
+    }
 }

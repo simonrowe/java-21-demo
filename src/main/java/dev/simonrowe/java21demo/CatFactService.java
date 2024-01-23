@@ -14,7 +14,7 @@ public class CatFactService {
     @SneakyThrows
     public CatFact getCatFact() throws InterruptedException {
         Thread.sleep(300);
-        var catfact = faker.cat().name();
+        var catfact = String.format("%s: %s", faker.cat().name(), faker.chuckNorris().fact());
         return new CatFact(catfact, catfact.length());
     }
 }

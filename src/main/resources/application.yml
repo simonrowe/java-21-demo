@@ -5,7 +5,7 @@ spring:
     path: "/graphql-spring"
   threads:
     virtual:
-      enabled: true
+      enabled: false
 
 graphql:
   servlet:
