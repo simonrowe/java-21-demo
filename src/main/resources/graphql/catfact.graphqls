@@ -5,5 +5,4 @@ type CatFact {
 
 type Query {
     catFact : CatFact!
-    catFactAsync: CatFact!
 }
