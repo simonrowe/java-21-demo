@@ -21,7 +21,13 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-graphql'
     implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:15.0.0'
+
+    implementation 'io.micrometer:micrometer-tracing-bridge-otel'
+    implementation 'io.opentelemetry:opentelemetry-exporter-otlp'
+
     runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
+
+
     implementation('com.github.javafaker:javafaker:1.0.2') {
         exclude group: 'org.yaml'
     }
