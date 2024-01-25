@@ -4,10 +4,10 @@ spring:
   graphql:
     cors:
       allowed-headers: '*'
-    path: "/graphql-spring"
+      path: "/graphql-spring"
   threads:
     virtual:
-      enabled: false
+      enabled: true
 
 management:
   tracing:

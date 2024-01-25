@@ -22,14 +22,17 @@ public class CatFactServiceImpl implements CatFactService {
     @Override
     public CatFact getCatFact() {
         var databaseSpan = Observation.createNotStarted("database-call", observationRegistry);
-        databaseSpan.observe(callDatabase());
+        databaseSpan.observe(pause(300));
+
+        var apiSpan = Observation.createNotStarted("api-call", observationRegistry);
+        apiSpan.observe(pause(50));
         var catfact = String.format("%s: %s", faker.cat().name(), faker.chuckNorris().fact());
         log.info("{} Retrieved catfact: {}", Thread.currentThread(), catfact);
         return new CatFact(catfact, catfact.length());
     }
 
     @NotNull
-    private static Runnable callDatabase() {
+    private static Runnable pause(int time) {
         return () ->
         {
             try {
