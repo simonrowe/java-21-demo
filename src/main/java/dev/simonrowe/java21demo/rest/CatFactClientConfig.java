@@ -1,4 +1,4 @@
-package dev.simonrowe.java21demo;
+package dev.simonrowe.java21demo.rest;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package dev.simonrowe.java21demo;
+package dev.simonrowe.java21demo.graphql;
 
 import static io.micrometer.context.ContextExecutorService.wrap;
 

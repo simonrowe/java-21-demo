@@ -9,10 +9,14 @@ spring:
     virtual:
       enabled: true
 
+mongock:
+  migration-scan-package: dev.simonrowe.java21demo.mongo
+
 management:
   tracing:
     sampling:
       probability: 1.0
+
   otlp:
     tracing:
       endpoint: http://localhost:4318/v1/traces

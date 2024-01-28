@@ -1,5 +1,8 @@
-package dev.simonrowe.java21demo;
+package dev.simonrowe.java21demo.graphql;
 
+import dev.simonrowe.java21demo.domain.CatFact;
+import dev.simonrowe.java21demo.rest.CatFactClient;
+import dev.simonrowe.java21demo.service.CatFactService;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;

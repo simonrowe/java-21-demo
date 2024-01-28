@@ -2,7 +2,6 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.2.2'
     id 'io.spring.dependency-management' version '1.1.4'
-    id 'org.graalvm.buildtools.native' version '0.9.28'
 }
 
 group = 'dev.simonrowe'
@@ -15,19 +14,28 @@ java {
 repositories {
     mavenCentral()
 }
+ext {
+//    set('mongodb.version', "4.1.8")
+}
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-graphql'
-    implementation 'org.springframework.boot:spring-boot-starter-aop'
     implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:15.0.0'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
 
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'io.micrometer:micrometer-tracing-bridge-otel'
+    implementation 'io.micrometer:micrometer-tracing-bridge-otel'
     implementation 'io.opentelemetry:opentelemetry-exporter-otlp'
 
-    runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    implementation 'org.springframework.boot:spring-boot-testcontainers'
+    implementation "org.testcontainers:mongodb"
+    implementation 'io.mongock:mongock-springboot-v3'
+    implementation 'io.mongock:mongodb-springdata-v4-driver'
 
+    runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
 
     implementation('com.github.javafaker:javafaker:1.0.2') {
         exclude group: 'org.yaml'
@@ -36,16 +44,20 @@ dependencies {
 
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
-
     compileOnly 'org.projectlombok:lombok'
     testCompileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.boot:spring-boot-testcontainers'
     testImplementation 'org.testcontainers:junit-jupiter'
     testImplementation 'io.rest-assured:rest-assured:5.4.0'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "io.mongock:mongock-bom:5.1.7"
+    }
 }
 
 tasks.named('test') {
