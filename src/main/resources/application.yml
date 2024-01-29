@@ -4,10 +4,10 @@ spring:
   graphql:
     cors:
       allowed-headers: '*'
-      path: "/graphql-spring"
+    path: "/graphql-spring"
   threads:
     virtual:
-      enabled: true
+      enabled: false
 
 mongock:
   migration-scan-package: dev.simonrowe.java21demo.mongo

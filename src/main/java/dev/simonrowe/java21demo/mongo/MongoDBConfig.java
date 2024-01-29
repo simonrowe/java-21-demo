@@ -46,7 +46,5 @@ public class MongoDBConfig {
             clientSettingsBuilder.contextProvider(ContextProviderFactory.create(registry))
                 .addCommandListener(new MongoObservationCommandListener(registry));
         };
-
-
     }
 }

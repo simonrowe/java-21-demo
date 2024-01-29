@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class GraphqlConfig {
 
-    @Bean("graphqlAsyncTaskExecutor")
+  //  @Bean("graphqlAsyncTaskExecutor")
     public Executor threadPoolTaskExecutor() {
         return wrap(Executors.newVirtualThreadPerTaskExecutor(), ContextSnapshot::captureAll);
     }
